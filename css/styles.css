@@ -1,0 +1,74 @@
+:root {
+  --primary-color: #15CC19;
+  --secondary-color: #294C71;
+  --primary-color-light:#1D65B2;
+  --dark-grey: #55575a;
+  --black: #000;
+  --light-grey:#f5f5f5;
+  --link-hover-color:#1f7409;
+  --link-active-color:#00625c;
+  --orange:#F2760F;
+  --standard-font-weight:400;
+  --bold-font-weight:700;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.main_list {
+  max-width: 900px;
+  margin: 20 auto;
+  padding: 15px;
+}
+
+.pokedex_name {
+  max-width: 900px;
+  margin: 20 auto;
+  padding: 15px;
+}
+
+.big_pokemon {
+  font-family:'Advent Pro', sans-serif;
+  color: var(--orange);
+  font-size:14px;
+
+}
+
+body{
+  background-color: var(--light-grey);
+  font-family:'Advent Pro', sans-serif;
+  font-weight:var(--standard-font-weight);
+  font-size: 16px;
+  color: var(--dark-grey);
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 32px;
+  font-weight:var(--bold-font-weight);
+  color: var(--black);
+
+}
+
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight:var(--bold-font-weight);
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight:var(--bold-font-weight)0;
+}
