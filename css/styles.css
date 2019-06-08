@@ -1,6 +1,7 @@
 :root {
   --primary-color: #15CC19;
   --secondary-color: #294C71;
+  --secondary-color-light:#36679A
   --primary-color-light:#1D65B2;
   --dark-grey: #55575a;
   --black: #000;
@@ -41,6 +42,11 @@ header {
   color: var(--orange);
   font-size:14px;
 
+}
+
+.sub_text {
+  color: var(--secondary-color-light);
+  font-size: 16px;
 }
 
 body{
