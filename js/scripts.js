@@ -23,7 +23,11 @@ var pokemonRepository = (function(){
    }
 
    function add(pokemon) {
-     repository.push(pokemon);
+     if (typeof(pokemon) === 'object') {
+       repository.push(pokemon);
+     } else {
+       console.log ('Please input an object')
+     }
    }
 
    return {
