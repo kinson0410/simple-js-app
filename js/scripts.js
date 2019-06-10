@@ -1,24 +1,39 @@
-var repository=[
+var pokemonRepository = (function(){
+ var repository=[
   {name:'Bulbasaur',
    height:0.7,
    types:['grass','poison']
- },
+  },
   {name:'Charmander',
    height:0.6,
    types:'fire'
- },
+  },
   {name:'Squirtle',
    height:0.5,
    types:'water'
- },
+  },
   {name:'Arbok',
    height:3.5,
    types:'poison'
- }
-]
+  }
+];
 
+   function getAll() {
+     return repository;
+   }
 
-repository.forEach(function(pokemon){
+   function add(pokemon) {
+     repository.push(pokemon);
+   }
+
+   return {
+    getAll: getAll,
+    add: add
+  };
+
+})();
+
+ pokemonRepository.getAll().forEach(function(pokemon){
   //start a head tag
   document.write('<h2 clsss="pokedex_name">' + pokemon.name + '<span class="sub_text">('+'height:' + pokemon.height + ')</span>');
   if(pokemon.height>3){
@@ -29,4 +44,4 @@ repository.forEach(function(pokemon){
     //else just clost the head tag
     document.write('</h2>')
   }
-});
+ });
