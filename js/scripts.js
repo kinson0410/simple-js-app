@@ -1,4 +1,5 @@
 var pokemonRepository = (function(){
+
  var repository=[
   {name:'Bulbasaur',
    height:0.7,
@@ -30,22 +31,43 @@ var pokemonRepository = (function(){
      }
    }
 
+//create new list and list item,
+//create button, and assign pokemon's name to the button,
+//append button to the list,
+   function addListItem(pokemon) {
+
+     var $pokemonList = document.querySelector('.pokemon_list');
+     var $listItem = document.createElement('li');
+     var $pokemonInfoButton = document.createElement('button');
+
+     $listItem.classList.add('pokemon_listItem');
+     $pokemonInfoButton.classList.add('name_button');
+     $pokemonInfoButton.innerText = "pokemon.name";
+     $pokemonInfoButton.addEventListner ('click',function(event){
+       showDetails(pokemon);
+     });
+
+     $listItem.appendChild($pokemonInfoButton);
+     $pokemonList.appendChild($listItem);
+   }
+
+   function showDetails(pokemon) {
+     console.log (pokemon)
+   }
+
    return {
     getAll: getAll,
-    add: add
+    add: add,
+    getListItem: getListItem
+
+
   };
 
-})();
+})(); // end of pokemonRepository
 
- pokemonRepository.getAll().forEach(function(pokemon){
-  //start a head tag
-  document.write('<h2 clsss="pokedex_name">' + pokemon.name + '<span class="sub_text">('+'height:' + pokemon.height + ')</span>');
-  if(pokemon.height>3){
-    //if there any with height greater than 3 print span
-    //and close the head tag
-    document.write('<span class="big_pokemon">Wow, That is big!</span></h2>')
-  }else{
-    //else just clost the head tag
-    document.write('</h2>')
-  }
- });
+
+ pokemonRepository.getAll().forEach(function(pokemon) {
+
+   pokemonRepository.addListItem(pokemon);
+
+});
