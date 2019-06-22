@@ -43,6 +43,7 @@ var pokemonRepository = (function(){
      $listItem.classList.add('pokemon_listItem');
      $pokemonInfoButton.classList.add('name_button');
      $pokemonInfoButton.innerText = "pokemon.name";
+     //create event listner
      $pokemonInfoButton.addEventListner ('click',function(event){
        showDetails(pokemon);
      });
@@ -65,7 +66,7 @@ var pokemonRepository = (function(){
 
 })(); // end of pokemonRepository
 
-
+//Call function in repository
  pokemonRepository.getAll().forEach(function(pokemon) {
 
    pokemonRepository.addListItem(pokemon);
