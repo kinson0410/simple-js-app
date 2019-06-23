@@ -42,11 +42,11 @@ var pokemonRepository = (function(){
 
      $listItem.classList.add('pokemon_listItem');
      $pokemonInfoButton.classList.add('name_button');
-     $pokemonInfoButton.innerText = "pokemon.name";
-     //create event listner
-     $pokemonInfoButton.addEventListner ('click',function(event){
-       showDetails(pokemon);
-     });
+     $pokemonInfoButton.innerText = pokemon.name;
+
+     //create event function
+     $pokemonInfoButton.onclick = function() { showDetails(pokemon) }
+     //Append child
 
      $listItem.appendChild($pokemonInfoButton);
      $pokemonList.appendChild($listItem);
@@ -59,10 +59,8 @@ var pokemonRepository = (function(){
    return {
     getAll: getAll,
     add: add,
-    getListItem: getListItem
-
-
-  };
+    addListItem: addListItem
+  }
 
 })(); // end of pokemonRepository
 
