@@ -46,8 +46,8 @@ var pokemonRepository = (function(){
 
      //create event function
      $pokemonInfoButton.onclick = function() { showDetails(pokemon) }
-     //Append child
 
+     //Append child
      $listItem.appendChild($pokemonInfoButton);
      $pokemonList.appendChild($listItem);
    }
