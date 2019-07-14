@@ -80,5 +80,27 @@ h3 {
 }
 
 .name_button {
-  
+  list-style-type: none;
+  /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+  /* takes the font from the outer container */
+    font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+  /*adds spacing to the button */
+    padding: 6px;
+    border-radius: 10px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: 0.4s opacity;
 }
+
+button:hover,.button:hover, button:focus, .button:focus {
+/* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+/* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  color: white;
