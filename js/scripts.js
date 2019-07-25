@@ -33,7 +33,7 @@ var pokemonRepository = (function () {
      $pokemonInfoButton.addEventListener('click',function(){
        showDetails(pokemon);
      });
-   
+
 
      //Append child
      $listItem.appendChild($pokemonInfoButton);
@@ -85,7 +85,6 @@ var pokemonRepository = (function () {
     getAll: getAll,
     add: add,
     addListItem: addListItem,
-    search: search,
     loadList: loadList,
     loadDetails: loadDetails
   };
