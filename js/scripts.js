@@ -74,11 +74,81 @@ var pokemonRepository = (function () {
   }
 
   //show details when clicking the button
+
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       console.log(item);
+      showModal(item);
     });
   }
+
+  //create modal content
+  function showModal(item){
+    var $modalContainer = document.querySelector('#modal_container');
+
+    //clear modal content
+    $modalContainer.innerHTML = '';
+
+    // modal elements
+    var modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    var nameElement = document.createElement('h2');
+    nameElement.innerText = item.name;
+
+    var imageElement = document.createElement('img');
+    imageElement.classList.add('modal_img');
+    imageElement.classList.setAttribute('src',item.imageUrl);
+
+    var heightElement = document.createElement('p');
+    heightElement.innerText = 'height:' + item.height;
+
+    var typeElement = document.createElement('p');
+    typeElement.innerText = 'type:' + item.types;
+
+    //create closing button in modal
+    var closeButton = document.createElement('button');
+    closeButton.classList.add('modal_close');
+    closeButton.innerText = 'Close';
+    closeButton.addEventListener('click', hideModal);
+
+    //apend modal
+    modal.appendChild(closeButton);
+    modal.appendChild(nameElement);
+    modal.appendChild(imageElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(typeElement);
+    $modalContainer.appendChild(modal);
+
+    //add visible class
+    $modalContainer.classList.add('is-visible');
+  )
+
+    //hide modal functions
+    function hideModal() {
+      var $modalContainer = document.querySelector('modal_container');
+      $modalContainer.classList.remove('is-visible');
+
+    //hide with ESC key
+    window.addEventListener('keydown', (e) => {
+      var $modalContainer = document.querySelector ('modal_container');
+
+      if (
+        e.key === 'Escape' && $modalContainer.classList.contains('is-visible')
+      ) {
+        hideModal();
+      }
+    });
+
+    //hide when click outside of modal
+    $modalContainer.addEventListener('click', (e) => {
+      var target = e.target;
+      if (target === $modalContainer) {
+        hideModal();
+      }
+    });
+
+
 
   //return functions
    return {
@@ -86,7 +156,11 @@ var pokemonRepository = (function () {
     add: add,
     addListItem: addListItem,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showDetails: showDetails,
+    showModal: showModal,
+    hideModal: hideModal
+
   };
 
 })(); // end of pokemonRepository
