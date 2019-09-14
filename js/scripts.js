@@ -122,12 +122,13 @@ var pokemonRepository = (function () {
 
     //add visible class
     $modalContainer.classList.add('is-visible');
-  )
+  }
 
     //hide modal functions
     function hideModal() {
       var $modalContainer = document.querySelector('modal_container');
       $modalContainer.classList.remove('is-visible');
+    }
 
     //hide with ESC key
     window.addEventListener('keydown', (e) => {
