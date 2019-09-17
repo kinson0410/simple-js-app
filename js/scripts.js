@@ -98,7 +98,8 @@ var pokemonRepository = (function () {
 
     var imageElement = document.createElement('img');
     imageElement.classList.add('modal_img');
-    imageElement.classList.setAttribute('src',item.imageUrl);
+    imageElement.setAttribute('src',item.imageUrl)
+    console.log(imageElement)
 
     var heightElement = document.createElement('p');
     heightElement.innerText = 'height:' + item.height;
@@ -126,13 +127,12 @@ var pokemonRepository = (function () {
 
     //hide modal functions
     function hideModal() {
-      var $modalContainer = document.querySelector('modal_container');
+      var $modalContainer = document.querySelector('#modal_container');
       $modalContainer.classList.remove('is-visible');
-    }
 
     //hide with ESC key
     window.addEventListener('keydown', (e) => {
-      var $modalContainer = document.querySelector ('modal_container');
+      var $modalContainer = document.querySelector ('#modal_container');
 
       if (
         e.key === 'Escape' && $modalContainer.classList.contains('is-visible')
@@ -149,7 +149,7 @@ var pokemonRepository = (function () {
       }
     });
 
-
+  }
 
   //return functions
    return {
